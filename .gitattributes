@@ -1,0 +1,8 @@
+# Shell and Python scripts must keep LF endings, even on Windows checkouts.
+# A CRLF shebang makes bash fail with "bad interpreter: No such file or
+# directory", which reads like a missing binary and is anything but.
+*.sh   text eol=lf
+*.py   text eol=lf
+*.json text eol=lf
+*.md   text eol=lf
+*.ps1  text eol=crlf

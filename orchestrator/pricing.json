@@ -1,0 +1,9 @@
+{
+  "_note": "USD per 1,000,000 tokens. Leave a model out, or leave any rate null, and no dollar figure is printed for it. Only fill this in if you are billed per token: a ChatGPT or Claude subscription consumes plan quota instead, and a dollar figure would be invented. Rates change — check the provider's pricing page rather than trusting a number sitting in a local file.",
+  "_example": {
+    "input": null,
+    "cache_read": null,
+    "cache_write": null,
+    "output": null
+  }
+}

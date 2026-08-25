@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["files_changed", "commands_run", "assumptions", "concerns", "scope_respected", "tests_added"],
+  "properties": {
+    "files_changed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "kind", "why"],
+        "properties": {
+          "path": { "type": "string", "description": "Repo-relative path." },
+          "kind": { "type": "string", "enum": ["add", "update", "delete"] },
+          "why": { "type": "string", "description": "One sentence: what this change accomplishes." }
+        }
+      }
+    },
+    "commands_run": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Shell commands actually executed, verbatim."
+    },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Anything you had to guess because the brief or the repo did not say. Be exhaustive and blunt; this is the first thing the reviewer checks."
+    },
+    "concerns": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Parts of your own work you are not confident in, and why. An empty list means you are certain of every line."
+    },
+    "scope_respected": {
+      "type": "boolean",
+      "description": "True only if every file you touched matches the declared scope globs."
+    },
+    "tests_added": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Repo-relative paths of test files added or extended."
+    }
+  }
+}
